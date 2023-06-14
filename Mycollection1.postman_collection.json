@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "294fadec-4743-4eb1-b106-b3d4a9fcaa5e",
+		"name": "Mycollection1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27685228",
+		"_collection_link": "https://www.postman.com/jessicabilochi/workspace/my-own-workspace/collection/27685228-294fadec-4743-4eb1-b106-b3d4a9fcaa5e?action=share&creator=27685228&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "GetRequest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{globalurl}}/api/users?page=2\n",
+					"host": [
+						"{{globalurl}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostRequest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bharat\",\r\n    \"job\": \"Manager\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutRequest",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ritu\",\r\n    \"job\": \"Leader resident\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/185",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"185"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteRequest",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/185",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"185"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://httpbin.org/status/:status?name=Bharat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://httpbin.org/status/:status?name=Bharat",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"status",
+						":status"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Bharat"
+						}
+					],
+					"variable": [
+						{
+							"key": "status",
+							"value": "401"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
